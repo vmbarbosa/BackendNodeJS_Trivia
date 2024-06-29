@@ -1,0 +1,22 @@
+{
+  "name": "programacion",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file .env app.js",
+    "prod": "node --env-file .env.production app.js"
+  },
+  "keywords": [
+    "trivia",
+    "game",
+    "uninorte"
+  ],
+  "author": "Victor Barbosa",
+  "license": "MIT",
+  "description": "Game of Trivia",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4"
+  }
+}
