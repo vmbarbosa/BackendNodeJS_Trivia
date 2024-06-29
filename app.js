@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 const app = express()
 const port = process.env.PORT
@@ -19,6 +20,52 @@ try{
 }
 
 console.log(url);
+
+
+
+
+
+const user_schema = Schema({
+    name: {
+        type: String,
+        require: true
+    },
+    nickname: {
+        type: String,
+        require: true
+    },
+    password: {
+        type: String,
+        require: true
+    },
+    cel: {
+        type: String,
+        require: true
+    },
+    email: {
+        type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+})
+
+const user = model('user', user_schema)
+
+const first_user = new user({
+    name: "Victor",
+    nickname: "vmbarbosa",
+    password: "pass",
+    cel: "134423243"
+})
+
+try {
+    await first_user.save()
+} catch (error) {
+    
+}
+
 
 app.use(express.json())
 
